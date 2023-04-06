@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <description>This Object is used to catch the exceptions</description>
+    <fields>
+        <fullName>Class_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Class Name</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exception_Mesage__c</fullName>
+        <externalId>false</externalId>
+        <label>Exception Mesage</label>
+        <length>55</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Line Number</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line__c</fullName>
+        <externalId>false</externalId>
+        <label>Line</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <indexes>
+        <fullName>Class</fullName>
+        <fields>
+            <name>Class_Name__c</name>
+            <sortDirection>ASC</sortDirection>
+        </fields>
+        <label>Class</label>
+    </indexes>
+    <label>Error Handler</label>
+    <pluralLabel>Error Handler</pluralLabel>
+</CustomObject>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Alpha3code__c</fullName>
+        <externalId>false</externalId>
+        <label>Alpha3code</label>
+        <length>3</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>55</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>alpha2code__c</fullName>
+        <externalId>false</externalId>
+        <label>alpha2code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>OWNER_CHANGE_DATA_VALIDATION</fullName>
+        <active>true</active>
+        <description>do not allow to change owner unless Country, Lead
+Source and No. of Employees are filled in.
+This applies for all profiles except of System Administrator and Contract Manager</description>
+        <errorConditionFormula>IF(
+AND( $Profile.Name  &lt;&gt; &apos;Systeembeheerder&apos;,
+     $Profile.Name  &lt;&gt; &apos;Contract Manager&apos;,
+     ISCHANGED(OwnerId),ISPICKVAL(LeadSource,&apos;&apos;),
+     ISNULL(NumberOfEmployees), ISBLANK( Country ) 
+
+),
+ TRUE,
+ FALSE)</errorConditionFormula>
+        <errorMessage>You cannot change the owner unless Lead Source and Number of Employees has a value</errorMessage>
+    </validationRules>
+</CustomObject>
